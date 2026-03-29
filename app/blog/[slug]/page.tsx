@@ -2,6 +2,7 @@ import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/mdx'
 import MDXContent from '@/components/blog/MDXContent'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import rehypeSlug from 'rehype-slug'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -22,13 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
-  if (!post) notFound()
+  if (!post) return notFound()
 
   // Generate TOC from h2 headings
   const headings = [...post.content.matchAll(/^## (.+)/gm)].map((m, i) => ({
     num: i + 1,
     text: m[1],
-    id: m[1].toLowerCase().replace(/\s+/g, '-'),
+    id: m[1].toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
   }))
 
   return (
@@ -53,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
                  style={{ background: 'linear-gradient(135deg, rgba(56,189,248,0.06) 0%, rgba(59,130,246,0.06) 100%)', border: '1px solid rgba(255,255,255,0.05)' }} />
 
             <article>
-              <MDXContent source={post.content} />
+              <MDXContent source={post.content} options={{ mdxOptions: { rehypePlugins: [rehypeSlug] } }} />
             </article>
           </div>
 

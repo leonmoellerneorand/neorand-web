@@ -13,6 +13,9 @@ const components = {
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className="space-y-2 mb-5 pl-0" {...props} />
   ),
+  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+    <ol className="space-y-2 mb-5 pl-0" {...props} />
+  ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li className="flex items-start gap-3 text-muted">
       <span className="text-accent mt-1 flex-shrink-0">→</span>
@@ -27,6 +30,11 @@ const components = {
   ),
 }
 
-export default function MDXContent({ source }: { source: string }) {
-  return <MDXRemote source={source} components={components} />
+interface MDXContentProps {
+  source: string
+  options?: Parameters<typeof MDXRemote>[0]['options']
+}
+
+export default function MDXContent({ source, options }: MDXContentProps) {
+  return <MDXRemote source={source} components={components} options={options} />
 }
