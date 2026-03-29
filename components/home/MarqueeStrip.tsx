@@ -18,7 +18,7 @@ export default function MarqueeStrip() {
 
       <div className="flex animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap">
         {repeated.map((item, i) => (
-          <span key={i} className="flex items-center mx-8 text-sm font-medium text-muted uppercase tracking-widest">
+          <span key={`${item}-${i}`} className="flex items-center mx-8 text-sm font-medium text-muted uppercase tracking-widest">
             {item}
             <span className="ml-8 w-1 h-1 rounded-full bg-accent/60 inline-block" />
           </span>
