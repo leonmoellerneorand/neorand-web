@@ -1,3 +1,4 @@
+import 'server-only'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -14,7 +15,7 @@ export function getAllBlogPosts(): BlogPost[] {
   return files.map((file) => {
     const raw = fs.readFileSync(path.join(dir, file), 'utf-8')
     const { data, content } = matter(raw)
-    return { slug: file.replace('.mdx', ''), ...data, content } as BlogPost
+    return { ...data, content, slug: file.replace('.mdx', '') } as BlogPost
   }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
@@ -33,7 +34,7 @@ export function getAllCasos(): CasoPost[] {
   return files.map((file) => {
     const raw = fs.readFileSync(path.join(dir, file), 'utf-8')
     const { data, content } = matter(raw)
-    return { slug: file.replace('.mdx', ''), ...data, content } as CasoPost
+    return { ...data, content, slug: file.replace('.mdx', '') } as CasoPost
   }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
