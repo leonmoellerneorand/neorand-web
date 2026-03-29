@@ -1,3 +1,9 @@
+import HeroSection from '@/components/home/HeroSection'
+
 export default function Home() {
-  return <main>NEORAND</main>
+  return (
+    <main>
+      <HeroSection />
+    </main>
+  )
 }
