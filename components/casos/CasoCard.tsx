@@ -15,7 +15,7 @@ interface CasoCardProps {
 
 export default function CasoCard({ caso, index }: CasoCardProps) {
   return (
-    <div className="card-glass card-hover rounded-card-lg overflow-hidden flex flex-col">
+    <div className="card-glass card-hover rounded-card-lg overflow-hidden flex flex-col group">
       {/* Colored top band */}
       <div className={`h-1.5 w-full ${BAND_COLORS[index % BAND_COLORS.length]}`} />
 
@@ -34,7 +34,7 @@ export default function CasoCard({ caso, index }: CasoCardProps) {
         <span className="inline-block self-start px-3 py-1 rounded-badge text-xs font-medium text-accent bg-accent/10 border border-accent/20 mb-3">
           {caso.tag}
         </span>
-        <h3 className="font-heading font-bold text-lg text-text mb-2 leading-snug flex-1">{caso.title}</h3>
+        <h3 className="font-heading font-bold text-lg text-text mb-2 leading-snug flex-1 group-hover:text-accent transition-colors">{caso.title}</h3>
         <p className="text-muted text-sm leading-relaxed mb-6">{caso.excerpt}</p>
 
         {/* 3 metrics */}
@@ -43,8 +43,8 @@ export default function CasoCard({ caso, index }: CasoCardProps) {
             { label: caso.metric1Label, value: caso.metric1Value },
             { label: caso.metric2Label, value: caso.metric2Value },
             { label: caso.metric3Label, value: caso.metric3Value },
-          ].map(({ label, value }) => (
-            <div key={label} className="text-center p-2 rounded-xl bg-white/[0.02] border border-card-border">
+          ].map(({ label, value }, i) => (
+            <div key={i} className="text-center p-2 rounded-xl bg-white/[0.02] border border-card-border">
               <div className="font-heading font-bold text-base text-accent">{value}</div>
               <div className="text-muted text-[10px] leading-tight mt-0.5">{label}</div>
             </div>
