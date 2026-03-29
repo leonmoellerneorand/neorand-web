@@ -1,6 +1,7 @@
 import { getAllBlogPosts } from '@/lib/mdx'
 import BlogCard from '@/components/blog/BlogCard'
 import SectionHeader from '@/components/ui/SectionHeader'
+import FadeIn from '@/components/ui/FadeIn'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,23 +16,29 @@ export default function BlogPage() {
   return (
     <main className="pt-32 pb-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader
-          label="Blog"
-          title="Ideas, guías y / casos reales."
-        />
+        <FadeIn>
+          <SectionHeader
+            label="Blog"
+            title="Ideas, guías y / casos reales."
+          />
+        </FadeIn>
 
         {featured && (
-          <div className="mb-8">
-            <BlogCard post={featured} featured />
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="mb-8">
+              <BlogCard post={featured} featured />
+            </div>
+          </FadeIn>
         )}
 
         {rest.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {rest.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
+          <FadeIn delay={0.2}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {rest.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+          </FadeIn>
         )}
 
         {posts.length === 0 && (

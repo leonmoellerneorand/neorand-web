@@ -40,7 +40,10 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           </h2>
           <p className="text-muted text-sm leading-relaxed mb-6">{post.excerpt}</p>
           <div className="flex items-center justify-between">
-            <span className="text-muted text-xs">{post.readTime} de lectura</span>
+            <div className="flex items-center gap-4">
+              <span className="text-muted text-xs">{post.date}</span>
+              <span className="text-muted text-xs">{post.readTime} de lectura</span>
+            </div>
             <span className="text-accent text-sm">→</span>
           </div>
         </div>
