@@ -1,6 +1,7 @@
 import HeroSection from '@/components/home/HeroSection'
 import MarqueeStrip from '@/components/home/MarqueeStrip'
 import ServicesGrid from '@/components/home/ServicesGrid'
+import UseCasesGrid from '@/components/home/UseCasesGrid'
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <MarqueeStrip />
       <ServicesGrid />
+      <UseCasesGrid />
     </main>
   )
 }
