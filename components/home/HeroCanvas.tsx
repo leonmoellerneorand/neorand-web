@@ -45,8 +45,9 @@ export default function HeroCanvas() {
       const rect = canvas.getBoundingClientRect()
       mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
+    const onMouseLeave = () => { mouseRef.current = { x: -9999, y: -9999 } }
     canvas.addEventListener('mousemove', onMouseMove)
-    canvas.addEventListener('mouseleave', () => { mouseRef.current = { x: -9999, y: -9999 } })
+    canvas.addEventListener('mouseleave', onMouseLeave)
 
     const draw = () => {
       if (!canvas || !ctx) return
@@ -60,7 +61,7 @@ export default function HeroCanvas() {
         const dy = mouse.y - node.y
         const dist = Math.sqrt(dx * dx + dy * dy)
 
-        if (dist < REPULSION_RADIUS) {
+        if (dist < REPULSION_RADIUS && dist > 0) {
           const force = (REPULSION_RADIUS - dist) / REPULSION_RADIUS
           node.vx -= (dx / dist) * force * 2.5
           node.vy -= (dy / dist) * force * 2.5
@@ -111,6 +112,7 @@ export default function HeroCanvas() {
     return () => {
       window.removeEventListener('resize', resize)
       canvas.removeEventListener('mousemove', onMouseMove)
+      canvas.removeEventListener('mouseleave', onMouseLeave)
       cancelAnimationFrame(rafRef.current)
     }
   }, [])
