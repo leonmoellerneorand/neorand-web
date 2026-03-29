@@ -16,10 +16,10 @@ const components = {
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol className="space-y-2 mb-5 pl-0" {...props} />
   ),
-  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="flex items-start gap-3 text-muted">
+  li: ({ children, ...rest }: React.HTMLAttributes<HTMLLIElement>) => (
+    <li className="flex items-start gap-3 text-muted" {...rest}>
       <span className="text-accent mt-1 flex-shrink-0">→</span>
-      <span>{props.children}</span>
+      <span>{children}</span>
     </li>
   ),
   blockquote: (props: React.HTMLAttributes<HTMLElement>) => (

@@ -28,8 +28,7 @@ export default async function CasoPostPage({ params }: Props) {
     <main className="pt-32 pb-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Hero card */}
-        <div className="card-glass rounded-card-lg p-8 mb-12 relative overflow-hidden"
-             style={{ borderTop: '2px solid rgba(56,189,248,0.5)' }}>
+        <div className="card-glass rounded-card-lg p-8 mb-12 relative overflow-hidden border-t-2 border-accent/50">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-start">
             <div>
               <span className="inline-block px-3 py-1 rounded-badge text-xs font-medium text-accent bg-accent/10 border border-accent/20 mb-4">
@@ -46,8 +45,8 @@ export default async function CasoPostPage({ params }: Props) {
                 { label: caso.metric1Label, value: caso.metric1Value },
                 { label: caso.metric2Label, value: caso.metric2Value },
                 { label: caso.metric3Label, value: caso.metric3Value },
-              ].map(({ label, value }, i) => (
-                <div key={i} className="text-center p-4 rounded-card border border-card-border bg-white/[0.02] min-w-[80px]">
+              ].map(({ label, value }) => (
+                <div key={label} className="text-center p-4 rounded-card border border-card-border bg-white/[0.02] min-w-[80px]">
                   <div className="font-heading font-bold text-xl text-accent">{value}</div>
                   <div className="text-muted text-[11px] mt-1 leading-tight">{label}</div>
                 </div>
