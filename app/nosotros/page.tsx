@@ -87,7 +87,7 @@ export default function NosotrosPage() {
         <FadeIn delay={0.3}>
           <div className="text-center">
             <p className="font-heading font-bold text-2xl text-text mb-6">¿Hablamos sobre tu negocio?</p>
-            <ShimmerButton href="mailto:leonmoeller@neorand.com" variant="solid" className="text-base px-8 py-4">
+            <ShimmerButton href="https://wa.me/5218110105977" variant="solid" className="text-base px-8 py-4">
               Contáctanos →
             </ShimmerButton>
           </div>

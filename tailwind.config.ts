@@ -33,6 +33,8 @@ const config: Config = {
         'travel-line': 'travelLine 3.5s linear infinite',
         pulse2: 'pulse2 2s ease-in-out infinite',
         blink: 'blink 1.4s step-end infinite',
+        'progress-fill': 'progressFill 3.5s ease-in-out infinite',
+        'kanban-arrive': 'kanban-arrive 2.5s ease-out infinite',
       },
       keyframes: {
         marquee: {
@@ -54,6 +56,16 @@ const config: Config = {
         blink: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        progressFill: {
+          '0%': { width: '0%', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { width: '100%', opacity: '0' },
+        },
+        'kanban-arrive': {
+          '0%, 60%': { opacity: '0', transform: 'translateY(-8px)' },
+          '80%, 100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

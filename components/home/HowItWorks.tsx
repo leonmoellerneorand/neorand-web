@@ -1,6 +1,5 @@
 import FadeIn from '@/components/ui/FadeIn'
 import SectionHeader from '@/components/ui/SectionHeader'
-import ShimmerButton from '@/components/ui/ShimmerButton'
 
 const STEPS = [
   {
@@ -38,13 +37,12 @@ export default function HowItWorks() {
         </FadeIn>
 
         <div className="relative mt-12">
-          {/* Animated line */}
-          <div className="hidden md:block absolute top-8 left-0 right-0 h-px bg-white/5 overflow-hidden">
-            <div className="absolute top-0 h-full w-12"
-                 style={{
-                   background: 'linear-gradient(to right, transparent, rgba(56,189,248,0.8), transparent)',
-                   animation: 'travelLine 3.5s linear infinite',
-                 }} />
+          {/* Progress line connecting all 4 step circles */}
+          <div className="hidden md:block absolute top-8 left-[calc(100%/8)] right-[calc(100%/8)] h-px bg-white/5 overflow-hidden">
+            <div
+              className="absolute top-0 left-0 h-full bg-gradient-to-r from-accent/60 to-accent"
+              style={{ animation: 'progressFill 3.5s ease-in-out infinite' }}
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -62,12 +60,6 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Ghost CTA */}
-        <div className="mt-12 text-center">
-          <ShimmerButton href="mailto:leonmoeller@neorand.com" variant="outline">
-            Contáctanos →
-          </ShimmerButton>
-        </div>
       </div>
     </section>
   )

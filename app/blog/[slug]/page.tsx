@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="card-glass rounded-card p-5 border border-accent/10">
                 <p className="font-heading font-bold text-sm text-text mb-2">¿Quieres uno para tu negocio?</p>
                 <p className="text-muted text-xs mb-4">Implementamos esta solución en menos de 2 semanas.</p>
-                <a href="mailto:leonmoeller@neorand.com"
+                <a href="https://wa.me/5218110105977" target="_blank" rel="noopener"
                    className="block w-full text-center py-2 rounded-btn text-xs font-medium bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors">
                   Contáctanos →
                 </a>

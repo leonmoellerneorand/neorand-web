@@ -55,7 +55,7 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <ShimmerButton href="mailto:leonmoeller@neorand.com" variant="outline" className="w-full justify-center">
+              <ShimmerButton href="https://wa.me/5218110105977" variant="outline" className="w-full justify-center">
                 Solicitar propuesta →
               </ShimmerButton>
             </div>
@@ -94,7 +94,7 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <ShimmerButton href="mailto:leonmoeller@neorand.com" variant="solid" className="w-full justify-center">
+              <ShimmerButton href="https://wa.me/5218110105977" variant="solid" className="w-full justify-center">
                 ¿Ya tienes tu solución? →
               </ShimmerButton>
             </div>

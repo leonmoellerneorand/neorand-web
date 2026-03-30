@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 export default function SectionHeader({ label, title, sub, className = '' }: SectionHeaderProps) {
   const lines = title.split(' / ')
   return (
-    <div className={`mb-12 ${className}`}>
+    <div className={`mb-12 text-center ${className}`}>
       <span className="inline-block px-3 py-1 rounded-badge text-xs font-medium tracking-widest uppercase text-accent border border-accent/20 bg-accent/5 mb-4">
         {label}
       </span>
@@ -20,7 +20,7 @@ export default function SectionHeader({ label, title, sub, className = '' }: Sec
           </span>
         ))}
       </h2>
-      {sub && <p className="text-muted text-lg max-w-xl">{sub}</p>}
+      {sub && <p className="text-muted text-lg max-w-xl mx-auto">{sub}</p>}
     </div>
   )
 }

@@ -1,5 +1,8 @@
+import Image from 'next/image'
+import { Settings, Workflow, GitBranch, Map, BarChart2, Sparkles, Brain } from 'lucide-react'
 import FadeIn from '@/components/ui/FadeIn'
 import SectionHeader from '@/components/ui/SectionHeader'
+import type { LucideIcon } from 'lucide-react'
 
 interface ServiceCard {
   num: string
@@ -7,42 +10,42 @@ interface ServiceCard {
   desc: string
   wide?: boolean
   tag?: string
-  icon: string
+  Icon: LucideIcon
 }
 
 const CARDS: ServiceCard[] = [
   {
-    num: '01', icon: '💬', wide: true,
-    title: 'Agentes de IA Conversacionales',
+    num: '01', Icon: Settings, wide: true,
+    title: 'Mantenimiento continuo',
     desc: 'Asistentes inteligentes para WhatsApp, tu sitio web y correo. Atienden, califican y convierten en piloto automático.',
   },
   {
-    num: '02', icon: '⚡',
+    num: '02', Icon: Workflow,
     title: 'Automatización de Flujos de Trabajo',
     desc: 'Conectamos tus herramientas y eliminamos el trabajo repetitivo con flujos que corren solos.',
   },
   {
-    num: '03', icon: '🔗',
+    num: '03', Icon: GitBranch,
     title: 'Integración de Sistemas y APIs',
     desc: 'Unimos tus apps favoritas: CRMs, ERPs, bases de datos y cualquier sistema con API.',
   },
   {
-    num: '04', icon: '🗺️',
+    num: '04', Icon: Map,
     title: 'Consultoría y Mapeo de Procesos',
     desc: 'Analizamos tu operación, identificamos cuellos de botella y diseñamos el plan de automatización.',
   },
   {
-    num: '05', icon: '📊',
+    num: '05', Icon: BarChart2,
     title: 'Dashboards y Reportes Automáticos',
     desc: 'Visualiza tus métricas en tiempo real. Los reportes llegan solos, cuando los necesitas.',
   },
   {
-    num: '06', icon: '🚀', wide: true, tag: 'Más popular',
+    num: '06', Icon: Sparkles, wide: true, tag: 'Más popular',
     title: 'Solución Personalizada',
     desc: 'Diseñamos la automatización perfecta para tu negocio: desde el diagnóstico hasta el lanzamiento.',
   },
   {
-    num: '07', icon: '🧠',
+    num: '07', Icon: Brain,
     title: 'Arquitectura de Datos e IA Personalizada',
     desc: 'Infraestructura de datos y modelos de IA adaptados a los procesos únicos de tu empresa.',
   },
@@ -50,13 +53,23 @@ const CARDS: ServiceCard[] = [
 
 export default function ServicesGrid() {
   return (
-    <section id="servicios" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="servicios" className="py-24 px-6 relative overflow-hidden">
+      {/* Circuit board background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <Image
+          src="/images/services-circuit.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.04]"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative">
         <FadeIn>
           <SectionHeader
             label="Servicios"
-            title="Todo lo que necesitas / para automatizar."
-            sub="Si puedes imaginarlo, podemos automatizarlo."
+            title="Más que automatizaciones."
+            sub="Tu operación en manos expertas, mes a mes."
           />
         </FadeIn>
 
@@ -84,9 +97,26 @@ export default function ServicesGrid() {
                        style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%)' }} />
                 )}
 
-                <div className="text-2xl mb-4">{card.icon}</div>
+                {/* Icon */}
+                <div className="rounded-xl p-3 bg-white/5 inline-flex mb-4">
+                  <card.Icon className="w-6 h-6 text-sky-400" />
+                </div>
+
                 <h3 className="font-heading font-bold text-lg mb-2 text-text">{card.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{card.desc}</p>
+
+                {/* Chat image for card 01 */}
+                {card.num === '01' && (
+                  <div className="mt-4 relative h-32 rounded-xl overflow-hidden">
+                    <Image
+                      src="/images/service-chat.jpg"
+                      alt="Agente de chat en acción"
+                      fill
+                      className="object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg/80 to-transparent" />
+                  </div>
+                )}
               </div>
             </FadeIn>
           ))}

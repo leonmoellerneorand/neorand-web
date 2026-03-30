@@ -1,5 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import ShimmerButton from '@/components/ui/ShimmerButton'
 
 const HeroCanvas = dynamic(() => import('./HeroCanvas'), { ssr: false })
@@ -11,7 +12,14 @@ const integrations = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-40 pb-16 overflow-hidden">
+      <Image
+        src="/images/hero-bg.jpg"
+        alt=""
+        fill
+        className="object-cover opacity-20"
+        priority
+      />
       <HeroCanvas />
 
       {/* Radial glow background */}
@@ -29,7 +37,7 @@ export default function HeroSection() {
         <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
           ¿Listo para escalar sin límites? Construimos, automatizamos y optimizamos con inteligencia artificial a la medida de tus necesidades.
         </p>
-        <ShimmerButton href="mailto:leonmoeller@neorand.com" variant="solid" className="text-base px-8 py-4">
+        <ShimmerButton href="https://wa.me/5218110105977" variant="solid" className="text-base px-8 py-4">
           Contáctanos →
         </ShimmerButton>
       </div>
