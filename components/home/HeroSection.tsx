@@ -28,6 +28,10 @@ export default function HeroSection() {
              style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%)' }} />
       </div>
 
+      {/* Cover bottom-right watermark on hero-bg.jpg */}
+      <div className="absolute bottom-0 right-0 w-40 h-40 pointer-events-none"
+           style={{ background: 'radial-gradient(circle at bottom right, #050A14 30%, transparent 75%)' }} />
+
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <h1 className="font-heading font-bold text-5xl md:text-7xl tracking-tight leading-none mb-6">
           <span className="text-gradient">Soluciones inteligentes</span>
