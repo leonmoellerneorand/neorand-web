@@ -62,6 +62,7 @@ export default function ServicesGrid() {
           fill
           className="object-cover opacity-[0.04]"
         />
+        <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#050A14] to-transparent" />
       </div>
 
       <div className="max-w-6xl mx-auto relative">
