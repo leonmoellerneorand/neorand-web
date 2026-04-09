@@ -1,5 +1,6 @@
 import FadeIn from '@/components/ui/FadeIn'
 import SectionHeader from '@/components/ui/SectionHeader'
+import ParallaxBg from '@/components/ui/ParallaxBg'
 
 const STEPS = [
   {
@@ -26,8 +27,9 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 px-6 relative overflow-hidden">
+      <ParallaxBg src="/images/bg-proceso.png" opacity={0.10} />
+      <div className="max-w-6xl mx-auto relative z-10">
         <FadeIn>
           <SectionHeader
             label="Proceso"

@@ -1,6 +1,7 @@
 import FadeIn from '@/components/ui/FadeIn'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ShimmerButton from '@/components/ui/ShimmerButton'
+import ParallaxBg from '@/components/ui/ParallaxBg'
 
 const FEATURES_LEFT = [
   'Diagnóstico y mapeo',
@@ -29,8 +30,9 @@ function CheckIcon() {
 
 export default function PricingSection() {
   return (
-    <section id="precios" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="precios" className="py-24 px-6 relative overflow-hidden">
+      <ParallaxBg src="/images/bg-precios.png" opacity={0.12} />
+      <div className="max-w-5xl mx-auto relative z-10">
         <FadeIn>
           <SectionHeader
             label="Precios"
