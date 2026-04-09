@@ -2,11 +2,11 @@ import Link from 'next/link'
 
 function NeorandLogo() {
   return (
-    <svg width="120" height="28" viewBox="0 0 140 32" fill="none" aria-label="NEORAND AI">
-      <text x="0" y="24" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="22" fill="#3B82F6">neo</text>
-      <text x="52" y="24" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="22" fill="#F1F5F9">rand</text>
-      <text x="110" y="28" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="12" fill="#64748B">AI</text>
-    </svg>
+    <div className="flex items-end leading-none select-none" aria-label="NEORAND AI">
+      <span className="font-heading font-bold text-[22px] leading-none" style={{ color: '#3B82F6' }}>neo</span>
+      <span className="font-heading font-bold text-[22px] leading-none" style={{ color: '#F1F5F9' }}>rand</span>
+      <span className="font-heading font-bold text-[11px] leading-none ml-1 mb-[2px]" style={{ color: '#64748B' }}>AI</span>
+    </div>
   )
 }
 
@@ -93,7 +93,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-card-border flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-muted text-xs">© 2025 NEORAND</p>
+        <p className="text-muted text-xs">© 2026 NEORAND</p>
         <div className="flex gap-6">
           <Link href="/privacidad" className="text-muted text-xs hover:text-text transition-colors">Privacidad</Link>
           <Link href="/terminos" className="text-muted text-xs hover:text-text transition-colors">Términos</Link>

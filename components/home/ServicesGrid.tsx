@@ -98,7 +98,7 @@ export default function ServicesGrid() {
                 )}
 
                 {/* Icon */}
-                <div className="rounded-xl p-3 bg-white/5 inline-flex mb-4">
+                <div className="rounded-xl p-3 bg-white/5 flex w-fit mb-4">
                   <card.Icon className="w-6 h-6 text-sky-400" />
                 </div>
 

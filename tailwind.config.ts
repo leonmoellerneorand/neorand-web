@@ -35,6 +35,7 @@ const config: Config = {
         blink: 'blink 1.4s step-end infinite',
         'progress-fill': 'progressFill 3.5s ease-in-out infinite',
         'kanban-arrive': 'kanban-arrive 2.5s ease-out infinite',
+        'glow-travel': 'glowTravel 3s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -66,6 +67,10 @@ const config: Config = {
         'kanban-arrive': {
           '0%, 60%': { opacity: '0', transform: 'translateY(-8px)' },
           '80%, 100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        glowTravel: {
+          '0%': { left: '-35%' },
+          '100%': { left: '100%' },
         },
       },
     },

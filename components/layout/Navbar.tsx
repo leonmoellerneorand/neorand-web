@@ -5,11 +5,11 @@ import ShimmerButton from '@/components/ui/ShimmerButton'
 
 function NeorandLogo() {
   return (
-    <svg width="140" height="32" viewBox="0 0 140 32" fill="none" aria-label="NEORAND AI">
-      <text x="0" y="24" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="22" fill="#3B82F6">neo</text>
-      <text x="52" y="24" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="22" fill="#F1F5F9">rand</text>
-      <text x="110" y="28" fontFamily="var(--font-space-grotesk), sans-serif" fontWeight="700" fontSize="12" fill="#64748B">AI</text>
-    </svg>
+    <div className="flex items-end leading-none select-none" aria-label="NEORAND AI">
+      <span className="font-heading font-bold text-[22px] leading-none" style={{ color: '#3B82F6' }}>neo</span>
+      <span className="font-heading font-bold text-[22px] leading-none" style={{ color: '#F1F5F9' }}>rand</span>
+      <span className="font-heading font-bold text-[11px] leading-none ml-1 mb-[2px]" style={{ color: '#64748B' }}>AI</span>
+    </div>
   )
 }
 

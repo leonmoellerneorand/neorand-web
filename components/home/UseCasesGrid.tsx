@@ -114,13 +114,13 @@ const CASES: UseCase[] = [
     title: 'Agente de reclutamiento',
     badge: '−70% tiempo de contratación',
     visual: (
-      <div className="mt-4 relative h-20">
+      <div className="mt-4 relative h-28">
         {[
-          { label: 'Descartado', color: 'bg-red-500/20 border-red-500/30 text-red-400', offset: 'top-0 left-0' },
-          { label: 'En proceso', color: 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400', offset: 'top-2 left-2' },
-          { label: 'Seleccionado', color: 'bg-green-500/20 border-green-500/30 text-green-400', offset: 'top-4 left-4' },
+          { label: 'Descartado', color: 'bg-red-500/20 border-red-500/30 text-red-400', offset: 'top-0 left-0', z: 'z-[1]' },
+          { label: 'En proceso', color: 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400', offset: 'top-[38px] left-2', z: 'z-[2]' },
+          { label: 'Seleccionado', color: 'bg-green-500/20 border-green-500/30 text-green-400', offset: 'top-[76px] left-4', z: 'z-[3]' },
         ].map((cv, i) => (
-          <div key={i} className={`absolute ${cv.offset} w-[90%] p-2 rounded-lg bg-black/40 border border-white/5 flex items-center justify-between text-xs`}>
+          <div key={i} className={`absolute ${cv.offset} ${cv.z} w-[90%] p-2 rounded-lg bg-black/40 border border-white/5 flex items-center justify-between text-xs`}>
             <span className="text-muted">CV candidato</span>
             <span className={`px-1.5 py-0.5 rounded border text-[10px] ${cv.color}`}>{cv.label}</span>
           </div>

@@ -38,10 +38,10 @@ export default function HowItWorks() {
 
         <div className="relative mt-12">
           {/* Progress line connecting all 4 step circles */}
-          <div className="hidden md:block absolute top-8 left-[calc(100%/8)] right-[calc(100%/8)] h-px bg-white/5 overflow-hidden">
+          <div className="hidden md:block absolute top-8 left-[calc(100%/8)] right-[calc(100%/8)] h-px bg-white/10 overflow-hidden">
             <div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-accent/60 to-accent"
-              style={{ animation: 'progressFill 3.5s ease-in-out infinite' }}
+              className="absolute top-0 h-full w-[35%] bg-gradient-to-r from-transparent via-accent to-transparent opacity-70"
+              style={{ animation: 'glowTravel 3s linear infinite', left: '-35%' }}
             />
           </div>
 
