@@ -1,0 +1,41 @@
+---
+title: "Adiós al formulario: registro de ventas en campo directo desde WhatsApp"
+slug: registro-ventas-en-campo
+tag: Automatización de Operaciones
+company: Equipo de Ventas en Campo
+industry: Ventas y Distribución
+metric1Label: Formularios eliminados
+metric1Value: 100%
+metric2Label: Flujo de registro
+metric2Value: Borrador → Confirmación → Registro
+metric3Label: Documentos
+metric3Value: Organizados por cliente, automático
+excerpt: "Un equipo de vendedores en campo llenaba formularios y subía documentos a mano a distintas carpetas. Un asistente de WhatsApp reemplazó por completo el formulario, con validación explícita antes de cerrar cada venta."
+date: "2026-06-19"
+serviceType: Asistentes Inteligentes
+canal: WhatsApp
+implementacion: A medida
+herramientas: WhatsApp API · LangChain · PostgreSQL · OneDrive · Supabase
+---
+
+## El reto
+
+Un equipo de vendedores en campo registraba cada venta llenando formularios y subiendo manualmente identificaciones, comprobantes y evidencia fotográfica a distintas carpetas — un proceso lento, con alta probabilidad de errores de captura y de documentos mal organizados.
+
+## La solución
+
+Se construyó un asistente de WhatsApp que reemplaza por completo el formulario: el vendedor simplemente escribe o dicta los datos del cliente, y el bot:
+
+1. Arma un borrador de la venta con los datos recibidos.
+2. Se lo confirma al vendedor antes de guardar nada como definitivo (modelo borrador → confirmación → registro final, para nunca capturar una venta sin validación).
+3. Solicita, uno por uno, los documentos necesarios (identificación, comprobante, evidencia de venta).
+4. Organiza automáticamente cada documento en una carpeta por cliente en la nube, creando la estructura de carpetas si no existe.
+5. Permite corregir datos o cancelar la venta en cualquier momento de la conversación.
+
+Toda la conversación queda persistida en base de datos como una máquina de estados: si el vendedor se tarda en responder o cierra la conversación, al volver a escribir el bot continúa exactamente donde se había quedado.
+
+Una mejora reciente agrega una verificación de identidad ligera: la primera vez que un número escribe, se le pide su nombre completo una sola vez —con un mensaje que explica que es parte de la mejora continua del servicio— y ese dato queda guardado permanentemente, sin volver a preguntarlo.
+
+## Resultados
+
+El equipo de campo registra una venta completa —datos y documentos— sin salir de WhatsApp y sin usar ningún formulario externo, con cada venta respaldada por un borrador confirmado explícitamente antes de quedar como definitiva.

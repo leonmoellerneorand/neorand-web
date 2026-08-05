@@ -1,0 +1,40 @@
+---
+title: "Facturas de mantenimiento: de captura manual a proceso 100% automático"
+slug: automatizacion-facturacion-flotilla
+tag: Automatización de Flujos
+company: Flotilla Vehicular Corporativa
+industry: Logística y Transporte
+metric1Label: Proceso
+metric1Value: 100% automático
+metric2Label: Fuente de datos
+metric2Value: Correo + XML CFDI
+metric3Label: Intervención IA
+metric3Value: Solo en excepciones
+excerpt: "Una empresa con flotilla propia procesaba cada factura de mantenimiento a mano: identificar el vehículo, clasificar el servicio, archivar y actualizar el calendario. Ahora el pipeline corre solo, de principio a fin."
+date: "2026-01-12"
+serviceType: Automatización de Flujos
+canal: Correo + WhatsApp
+implementacion: A medida
+herramientas: n8n · Outlook/Graph API · Claude · OneDrive/SharePoint · Excel Online · WhatsApp API
+---
+
+## El reto
+
+Una empresa con una flotilla de vehículos recibía facturas de mantenimiento por correo electrónico y procesaba cada una manualmente: identificar el vehículo, clasificar el tipo de servicio, generar el reporte correspondiente, archivar la evidencia y actualizar el calendario de mantenimiento a mano — un proceso lento y propenso a errores humanos.
+
+## La solución
+
+Se construyó un pipeline que corre de punta a punta sin intervención humana:
+
+1. Un disparador vigila la bandeja de correo y detecta facturas nuevas.
+2. Se extraen los adjuntos (PDF y XML de factura electrónica).
+3. El XML se procesa para obtener montos, fechas y folio fiscal.
+4. Un motor de reglas intenta identificar el vehículo contra un catálogo interno; si no encuentra coincidencia clara, un modelo de lenguaje (Claude) analiza el PDF y el contexto del correo para extraer los datos faltantes.
+5. Se clasifica el servicio como preventivo o correctivo.
+6. Se genera el reporte de mantenimiento y se archiva junto con la factura como evidencia documental en la nube.
+7. Se actualiza automáticamente el calendario de mantenimiento, marcando la semana/vehículo correspondiente como completado.
+8. Se notifica por WhatsApp a la persona responsable de que el proceso quedó completo.
+
+## Resultados
+
+Un proceso que antes requería revisión manual de cada factura y actualización manual de hojas de cálculo ahora corre de forma automática de principio a fin, con la IA interviniendo solo cuando las reglas de negocio no bastan.

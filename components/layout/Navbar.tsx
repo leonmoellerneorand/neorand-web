@@ -49,6 +49,12 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
+        <Link
+          href="/agenda"
+          className="text-sm font-medium text-accent px-3 py-1.5 rounded-badge border border-accent/30 bg-accent/5 hover:bg-accent/10 hover:border-accent/50 transition-colors duration-200"
+        >
+          Agenda tu reunión gratuita
+        </Link>
       </div>
 
       {/* CTA */}

@@ -1,0 +1,33 @@
+---
+title: "Tres bases de conocimiento separadas para dejar de mezclar respuestas"
+slug: chatbot-rag-atencion-ventas
+tag: Chatbot / Base de Conocimiento
+company: Proveedor de Telecomunicaciones
+industry: Telecomunicaciones
+metric1Label: Bases de conocimiento
+metric1Value: 3 índices especializados
+metric2Label: Canales
+metric2Value: WhatsApp + Web
+metric3Label: Precisión
+metric3Value: Respuesta por categoría, no genérica
+excerpt: "Un catálogo de productos residenciales, móviles y empresariales mezclado en un solo repositorio generaba respuestas imprecisas. Al dividir la base de conocimiento en tres índices con reglas de enrutamiento, el chatbot dejó de confundir productos."
+date: "2026-05-08"
+serviceType: Asistentes Inteligentes
+canal: WhatsApp + Widget Web
+implementacion: A medida
+herramientas: WhatsApp API · Widget de chat web · LangChain · Embeddings OpenAI · Supabase · PostgreSQL
+---
+
+## El reto
+
+Un catálogo de productos residenciales y empresariales (planes de internet, líneas móviles, servicios adicionales) requería un chatbot que respondiera con precisión, pero un solo repositorio de información mezclaba productos muy distintos entre sí, generando respuestas imprecisas cuando el cliente preguntaba por un producto específico.
+
+## La solución
+
+Se rediseñó la base de conocimiento como **tres bases vectoriales separadas** (productos fijos residenciales/empresariales, productos móviles, y servicios adicionales/complementarios), y se instruyó al agente sobre exactamente cuál base consultar según la categoría de la pregunta — incluyendo el caso donde hay que consultar más de una base a la vez (por ejemplo, un plan base más un servicio adicional).
+
+El agente atiende tanto por WhatsApp como por un widget de chat en sitio web, compartiendo la misma lógica e integración a ambos canales.
+
+## Resultados
+
+Al dividir la base de conocimiento en índices especializados con reglas de enrutamiento explícitas, el agente deja de "mezclar" información entre productos distintos y responde con la precisión de un catálogo específico en vez de un buscador genérico.

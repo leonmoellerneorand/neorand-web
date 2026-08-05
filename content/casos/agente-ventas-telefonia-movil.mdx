@@ -1,0 +1,39 @@
+---
+title: "Un agente de WhatsApp que vende y da soporte de planes móviles 24/7"
+slug: agente-ventas-telefonia-movil
+tag: Ventas y Atención al Cliente
+company: Operador de Telefonía Móvil
+industry: Telecomunicaciones
+metric1Label: Disponibilidad
+metric1Value: 24/7
+metric2Label: Canal
+metric2Value: WhatsApp (texto y voz)
+metric3Label: Arquitectura
+metric3Value: Agente orquestador + sub-agentes
+excerpt: "El proceso de venta y soporte de planes móviles dependía de un asesor repartido entre varias herramientas y sin cobertura fuera de horario. Un agente conversacional por WhatsApp ahora sostiene toda la conversación de inicio a fin."
+date: "2026-03-30"
+serviceType: Asistentes Inteligentes
+canal: WhatsApp
+implementacion: A medida
+herramientas: WhatsApp API · Redis · RAG · Visión por IA · PostgreSQL · OneDrive · CRM
+---
+
+## El reto
+
+El proceso de venta y soporte de planes móviles requería que un asesor resolviera dudas de catálogo, verificara la cuenta del cliente, enviara documentos/fotos del producto y registrara la venta — todo repartido entre distintas herramientas y sin disponibilidad fuera de horario laboral.
+
+## La solución
+
+Se construyó un agente conversacional por WhatsApp capaz de sostener toda la conversación de venta y soporte de inicio a fin, incluyendo mensajes de voz:
+
+1. Responde preguntas de catálogo apoyándose en una base de conocimiento vectorial (RAG), no en respuestas fijas.
+2. Consulta el estado de cuenta/contrato del cliente en tiempo real.
+3. Verifica identidad antes de compartir información sensible.
+4. Envía fotos y documentos del producto cuando el cliente los solicita.
+5. Registra la venta directamente en el CRM al cierre de la conversación.
+
+En vez de construir un solo agente gigante con toda la lógica, el diseño usa un agente orquestador que delega en varios sub-procesos especializados (búsqueda de cliente, consulta de plan, manejo de documentos, envío de fotos, registro de venta), cada uno expuesto como una "herramienta" que el agente principal puede invocar según lo que necesite en cada momento.
+
+## Resultados
+
+Un único canal de WhatsApp que sustituye a un flujo de atención repartido en varias herramientas, disponible de forma continua y con arquitectura modular que permite agregar nuevas capacidades sin rehacer el agente principal.

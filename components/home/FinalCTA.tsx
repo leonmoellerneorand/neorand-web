@@ -43,8 +43,11 @@ export default function FinalCTA() {
                   Automatiza los procesos que te quitan tiempo y enfócate en lo que realmente importa.
                 </p>
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                  <ShimmerButton href="https://wa.me/5218110105977" variant="solid" className="text-base px-8 py-4">
-                    Contáctanos →
+                  <ShimmerButton href="/agenda" variant="solid" className="text-base px-8 py-4">
+                    Agenda tu reunión gratuita →
+                  </ShimmerButton>
+                  <ShimmerButton href="https://wa.me/5218110105977" variant="outline" className="text-base px-8 py-4">
+                    Contáctanos
                   </ShimmerButton>
                   <ShimmerButton href="/casos" variant="outline" className="text-base px-8 py-4">
                     Ver casos de éxito

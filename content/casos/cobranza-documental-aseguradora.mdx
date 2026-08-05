@@ -1,0 +1,35 @@
+---
+title: "Cobranza y captura de pólizas sin depender de revisión manual diaria"
+slug: cobranza-documental-aseguradora
+tag: Cobranza / Gestión Documental
+company: Intermediario de Seguros
+industry: Seguros
+metric1Label: Flujos automatizados
+metric1Value: 2 procesos
+metric2Label: Validación
+metric2Value: Doble verificación con IA
+metric3Label: Frecuencia
+metric3Value: Revisión diaria automática
+excerpt: "Un intermediario de seguros daba seguimiento a pagos, comisiones y documentación de pólizas de forma manual. Hoy dos flujos automáticos cubren la captura documental y los recordatorios de cobranza."
+date: "2026-02-24"
+serviceType: Automatización de Flujos
+canal: Almacenamiento en la nube + Mensajería
+implementacion: A medida
+herramientas: n8n · Agente de IA de extracción · PostgreSQL · API de mensajería
+---
+
+## El reto
+
+Un intermediario de seguros necesitaba dar seguimiento a pagos y comisiones pendientes, además de capturar y validar la documentación de nuevas pólizas — ambos procesos hechos manualmente, con riesgo de retrasos en cobranza y errores de captura en la documentación.
+
+## La solución
+
+Se implementaron dos flujos complementarios:
+
+**Intake documental de pólizas:** un flujo vigila una carpeta en la nube (y además revisa periódicamente por si algo se pasó), detecta archivos nuevos, extrae su contenido y usa un agente de IA para identificar los campos clave de la póliza (número, titular, agente, fechas). Un segundo paso de IA valida la información extraída antes de guardarla en base de datos, reduciendo el riesgo de capturar datos incorrectos.
+
+**Recordatorios de cobranza:** un proceso programado revisa diariamente qué pagos o comisiones están por vencer, recupera el historial y datos de contacto del agente correspondiente, y usa un modelo de lenguaje para redactar un mensaje de recordatorio personalizado (no una plantilla genérica), lo envía, y registra el resultado del envío.
+
+## Resultados
+
+Dos procesos que antes dependían de revisión manual diaria (documentos entrantes y pagos por vencer) ahora se ejecutan solos, con la IA aportando tanto la extracción de datos como la redacción de la comunicación con cada agente.
